@@ -11,3 +11,65 @@
 @media(max-width:900px){.topbar{min-height:120px;padding:15px}.bannerArt{display:none}.bannerStatus .chip{display:none}.actions #openValidator{margin-left:0}}
 @media(max-width:600px){.topbar{min-height:110px}.schoolTitle{font-size:24px}.bannerSchool small{font-size:10px}.goldRibbon{font-size:12px;padding:5px 20px 5px 12px}.bannerStatus{display:none}.actions button,.actions .filebutton{white-space:normal}}
 @media print{.topbar{display:none!important}}
+
+/* v1.3: responsive desktop-quality academic header and navigation */
+html,body{max-width:100%;overflow-x:clip}
+.layout,.content,.sidebar,.panel,.hero,.notice,.actions{min-width:0}
+.topbar{width:100%;min-height:146px;display:flex;align-items:center;justify-content:space-between;background:radial-gradient(circle at 78% 45%,#174b7c 0%,transparent 34%),linear-gradient(110deg,#03152f,#072957 70%,#03162e);border-bottom:5px solid #e8b347;padding:16px clamp(18px,3vw,48px);isolation:isolate;overflow:hidden}
+.topbar::before{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;background:repeating-linear-gradient(125deg,transparent 0 95px,rgba(91,161,229,.07) 96px 98px,transparent 99px 200px)}
+.topbar::after{height:6px;background:linear-gradient(90deg,#bb7609 0%,#ffd778 36%,#e2a12c 70%,#fbd26f 100%)}
+.bannerMain{display:flex;align-items:center;justify-content:space-between;gap:24px;flex:1;min-width:0;max-width:1250px}
+.bannerSchool{min-width:0;flex:1;gap:7px}
+.schoolTitle{font:700 clamp(27px,3vw,48px)/1 Georgia,serif;letter-spacing:.045em;white-space:normal}
+.bannerSchool small{font-weight:650;letter-spacing:.075em;font-size:clamp(11px,1.15vw,16px)}
+.goldRibbon{font-size:clamp(13px,1.45vw,19px);letter-spacing:.19em;padding:7px 42px 7px 18px;box-shadow:0 4px 14px #0003}
+.bannerArt{display:flex;gap:13px;align-items:center;opacity:1;flex:none}
+.bannerArt svg{height:73px;width:69px;filter:drop-shadow(0 3px 8px #00132f)}
+.bannerArt .bannerScales{color:#f5c565;width:86px}
+.bannerArt .bannerPillar{color:#81aedc}
+.bannerArt .bannerShield{color:#6ac9ff;height:88px;width:81px}
+.bannerArt .bannerGlobe{color:#5dbaee}
+.bannerStatus{align-self:flex-end;flex:none}
+.sidebar{background:linear-gradient(180deg,#082e5c,#052147);width:auto}
+.mobileNavToggle{display:none}
+.content{padding-top:24px}
+.actions{gap:10px;align-items:stretch}
+.actions button,.actions .filebutton{min-height:44px;border-radius:9px;flex:0 1 auto;white-space:normal;text-align:center}
+.actions #openValidator{margin-left:0}
+@media(max-width:1180px){.bannerArt .bannerPillar,.bannerArt .bannerGlobe{display:none}.bannerStatus{display:none}}
+@media(max-width:1000px){
+  .topbar{min-height:150px;padding:20px 24px}
+  .bannerArt{display:flex}
+  .sidebar{padding:14px 18px;gap:10px}
+  .sidebrand{padding:0}
+  .sidebrand h2{margin:5px 0;font-size:23px}
+  .sidebrand p{margin:3px 0}
+  .mobileNavToggle{display:flex;justify-content:space-between;align-items:center;width:100%;background:#15528b;border:1px solid #5395c9;text-align:left;font-size:14px;padding:12px 15px}
+  .sidebar nav{display:none;flex-direction:column;overflow:visible;gap:3px;padding:4px 0 7px}
+  .sidebar nav.mobileOpen{display:flex}
+  .navitem{width:100%;white-space:normal;font-size:13px;padding:10px 14px}
+  .content{padding:18px clamp(14px,3vw,28px) 30px}
+  .hero{flex-direction:row;align-items:center}
+  .heroStat{border-left:1px solid #c6d5e5;border-top:0;padding:0 0 0 18px;min-width:165px}
+}
+@media(max-width:650px){
+ .topbar{min-height:132px;padding:17px 17px;gap:5px}
+ .schoolTitle{font-size:clamp(25px,6.4vw,33px)}
+ .bannerSchool small{font-size:10px;line-height:1.35;letter-spacing:.03em}
+ .goldRibbon{font-size:12px;letter-spacing:.1em;padding:7px 21px 7px 11px}
+ .bannerArt{display:none}
+ .sidebar{padding:13px 15px}
+ .sidebrand small{font-size:10px}
+ .hero{flex-direction:column;align-items:stretch;padding:18px}
+ .hero h1{font-size:24px}
+ .heroStat{border-left:none;border-top:1px solid #c6d5e5;padding:9px 0 0;text-align:left;min-width:0}
+ .heroStat b{font-size:30px}
+ .actions{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+ .actions button,.actions .filebutton{width:100%;min-width:0;min-height:49px;padding:9px 7px;font-size:12px;overflow-wrap:anywhere}
+ .actions #printPdf,.actions #exportPpt{grid-column:auto}
+ .readinessCard{gap:12px}
+ .panelFooter{flex-wrap:wrap}
+ .panelFooter button{min-width:105px}
+}
+@media(min-width:651px) and (max-width:1000px){.actions{display:grid;grid-template-columns:repeat(4,minmax(0,1fr))}.actions button,.actions .filebutton{width:100%;padding:11px 7px}}
+@media print{.mobileNavToggle{display:none!important}}
